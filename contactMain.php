@@ -30,7 +30,7 @@
     background-size: cover;
     position: fixed;
     /* overflow: hidden; */
-  }
+  } 
 
   .container{
     max-width: 120rem;
