@@ -1,0 +1,397 @@
+<!-- author: Deepak Raj Elango -->
+<!-- Page: Experience Page -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Experience </title>
+
+  <style>
+  * {box-sizing: border-box}
+  body{
+    margin: 0;
+    padding: 0;
+    background-color: white;
+  }
+  html{
+    font-size: 10px;
+    font-family: "Roboto Cn", sans-serif;
+  }
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  header{
+    width: 100%;
+    height: 110vh;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container{
+    max-width: 120rem;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .menu-toggle{
+    position: fixed;
+    top: 2.5rem;
+    right: 2.5rem;
+    color: #eeeeee;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+  }
+
+  nav{
+    padding-top: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+  }
+
+  .brand{
+    font-size: 3rem;
+    font-weight: 300;
+    transform: translateX(-100rem);
+    animation: slideIn .5s forwards;
+  }
+
+  .brand span{
+    color: blue;
+  }
+
+  nav ul{
+    display: flex;
+  }
+
+  nav ul li{
+    list-style: none;
+    transform: translateX(100rem);
+    animation: slideIn .5s forwards;
+  }
+
+  nav ul li:nth-child(1){
+    animation-delay: 0s;
+  }
+
+  nav ul li:nth-child(2){
+    animation-delay: .5s;
+  }
+
+  nav ul li:nth-child(3){
+    animation-delay: 1s;
+  }
+
+  nav ul li:nth-child(4){
+    animation-delay: 1.5s;
+  }
+
+  nav ul li a{
+    padding: 1rem 0;
+    margin: 0 3rem;
+    position: relative;
+    letter-spacing: 2px;
+  }
+
+  nav ul li a:last-child{
+    margin-right: 0;
+  }
+
+  nav ul li a::before,
+  nav ul li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: blue;
+    left: 0;
+    transform: scaleX(0);
+    transition: all .5s;
+  }
+
+  nav ul li a::before{
+    top: 0;
+    transform-origin: left;
+  }
+
+  nav ul li a::after{
+    bottom: 0;
+    transform-origin: right;
+  }
+
+  .overlay{
+    background-color: rgba(0,0,0,.95);
+    /* position: fixed; */
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    transition: opacity 650ms;
+    transform: scale(0);
+    opacity: 0;
+    display: none;
+  }
+
+  nav ul li a:hover::before,
+  nav ul li a:hover::after{
+    transform: scaleX(1);
+  }
+
+  @keyframes slideIn {
+    from{
+
+    }
+    to{
+      transform: translateX(0);
+    }
+  }
+
+  @media screen and (max-width: 700px){
+
+    .menu-toggle{
+      display: block;
+    }
+
+    nav{
+      padding-top: 0;
+      display: none;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    nav ul{
+      flex-direction: column;
+    }
+    nav ul li{
+      margin-top: 5rem;
+    }
+    nav ul li a{
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .brand{
+      font-size: 5rem;
+    }
+    .overlay.menu-open,
+    nav.menu-open{
+      display: flex;
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  /* For vertical tab styling */
+
+  /* Style the tab */
+  .tab {
+    float: left;
+    border: 1px blue;
+    border-style:  outset;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    background-color: white;
+    width: 20%;
+    height: 130px;
+    transition: .5s ease;
+  }
+
+  /* Style the buttons inside the tab */
+  .tab button {
+    display: block;
+    background-color: inherit;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: blue;
+    transition: .5s ease;
+  }
+
+  /* Create an active/current "tab button" class */
+  .tab button.active {
+    background-color:  rgb(155, 232, 255);
+  }
+
+  /* Style the tab content */
+  .tabcontent {
+    float: left;
+    padding: 0px 12px;
+    width: 80%;
+    border-left: none;
+    height: 100%;
+  }
+  /* Highlighting a word blue */
+  .word{
+    font-size: 1.50rem;
+    font-weight: 100;
+    line-height: 15px;
+    padding-left: 20px;
+  }
+
+  .word span{
+    color: blue;
+  }
+  /* Content for tabs styling */
+  .card {
+    box-shadow: 4px 4px 8px 4px rgba(0, 0, 0, 0.2);
+    max-width: 32%;
+    margin: 6px;
+    text-align: center;
+    font-family: arial;
+    max-height: 100%;
+    float: left;
+  }
+
+  .card button {
+    border: none;
+    outline: 0;
+    padding: 12px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .card button:hover {
+    opacity: 0.7;
+  }
+
+  .tofloat{
+    right: 0;
+  }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="overlay"></div>
+    <div class="container">
+      <nav>
+        <h1 class="brand"><a href="experience.html">E<span>x</span>p<span>e</span>r<span>i</span>e<span>n</span>c<span>e</span> </a></h1>
+        <ul>
+          <li><a href="/Pages/Home page/update.html#">Home</a></li>
+          <li><a href="/Pages/Education/education.html#">Education</a></li>
+          <li><a href="/Pages/Experience/experience.html#">Experience</a></li>
+          <li><a href="/Pages/Lifestyle/lifestyle.html#">Lifestyle</a></li>
+          <li><a href="/Pages/Contact/contact.html#">Contact</a></li>
+        </ul>
+      </nav>
+      <br>
+      <!-- Header with description details -->
+      <div class="contents">
+        <hr width="100%" color="white">
+        <hr width="100%" color="black">
+      </div>
+
+      <h3> This will contain details on layout of mechanism and some other important information </h3>
+      <br>
+      <!-- Tabs and content for experience tab main  -->
+      <div class="tab">
+        <button class="tablinks" onclick="tabOpen(event, 'personal')" id="defaultOpen">Personal</button>
+        <button class="tablinks" onclick="tabOpen(event, 'school')">School</button>
+      </div>
+
+      <div class="tofloat">
+        <div id="personal" class="tabcontent">
+          <h3>Personal</h3>
+
+          <div class="card">
+            <!-- Personal Project 1 -->
+            <img class="images" src="img1.jpg" alt="Project image" style="width:100%">
+            <h1> Personal Projects Name</h1>
+            <h4>This will contain brief summary about the project</h4>
+            <p><button>Schematics</button></p>
+          </div>
+
+          <div class="card">
+            <!-- Personal Project 1 -->
+            <img class="images" src="img1.jpg" alt="Project image" style="width:100%">
+            <h1> Personal Projects Name</h1>
+            <h4>This will contain brief summary about the project</h4>
+            <p><button>Schematics</button></p>
+          </div>
+
+          <div class="card">
+            <!-- Personal Project 1 -->
+            <img class="images" src="img1.jpg" alt="Project image" style="width:100%">
+            <h1> Personal Projects Name</h1>
+            <h4>This will contain brief summary about the project</h4>
+            <p><button>Schematics</button></p>
+          </div>
+        </div>
+
+        <div id="school" class="tabcontent">
+          <h3>School</h3>
+
+          <div class="card">
+            <!-- School Project 1 -->
+            <img class="images" src="img1.jpg" alt="Project image" style="width:100%">
+            <h1>School Projects Name</h1>
+            <h4>This will contain brief summary about the project</h4>
+            <p><button>Schematics</button></p>
+          </div>
+
+          <div class="card">
+            <!-- School Project 1 -->
+            <img class="images" src="img1.jpg" alt="Project image" style="width:100%">
+            <h1> School Projects Name</h1>
+            <h4>This will contain brief summary about the project</h4>
+            <p><button>Schematics</button></p>
+          </div>
+
+          <div class="card">
+            <!-- School Project 1 -->
+            <img class="images" src="img1.jpg" alt="Project image" style="width:100%">
+            <h1> School Projects Name</h1>
+            <h4>This will contain brief summary about the project</h4>
+            <p><button>Schematics</button></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <script>
+  function tabOpen(evt, itemName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(itemName).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
+
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+</script>
+
+
+</body>
+</html>
