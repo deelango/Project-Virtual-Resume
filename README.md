@@ -9,3 +9,22 @@ Below you will find snippets of how the website is, note that there are many oth
 for example the login page consists of these dots that move from the bottom of the page to the top but in the picture it shows it frozen 
 
 Login Page (index.html)
+![](Images/Loginpage1.PNG)
+![](Images/Loginpage2.PNG)
+
+Home Page
+![](Images/Homepage1.PNG)
+![](Images/Homepage2.PNG)
+![](Images/Homepage3.PNG)
+
+Education
+![](Images/Education.PNG)
+
+Experience
+![](Images/Experience.PNG)
+
+Lifestyle
+![](Images/Lifestyle.PNG)
+
+Contact
+![](Images/Contact.PNG)
